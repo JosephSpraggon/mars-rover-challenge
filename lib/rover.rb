@@ -8,19 +8,11 @@ class Rover
 
   def move(instructions)
     navagation_tools
-    directions = instructions.chars
-    directions.each do |direction|
-      if direction == 'R'
-        turn_right
-      elsif direction == 'L'
-        turn_left
-      elsif direction == 'M'
-        check_in_bounds
-        move_forward
-      end
-    end
+    @directions = instructions.chars
+    go
     final_position
   end
+
 
   private
 
@@ -51,6 +43,19 @@ class Rover
       @x -= 1
     elsif @facing == 'S'
       @y -= 1
+    end
+  end
+
+  def go
+    @directions.each do |direction|
+      if direction == 'R'
+        turn_right
+      elsif direction == 'L'
+        turn_left
+      elsif direction == 'M'
+        check_in_bounds
+        move_forward
+      end
     end
   end
 
