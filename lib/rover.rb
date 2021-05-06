@@ -30,6 +30,8 @@ class Rover
           y += 1
         elsif facing == 'E'
           x += 1
+        elsif facing == 'W'
+          x -= 1
         end
       end
     end
