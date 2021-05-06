@@ -16,7 +16,11 @@ describe Rover do
   context '#move' do
 
     it 'can move one space north' do
-      expect(test_rover.move('MLR')).to eq('1 3 N')
+      expect(test_rover.move('M')).to eq('1 3 N')
+    end
+
+    it 'can turn to the right' do
+      expect(test_rover.move('R')).to eq('1 2 E')
     end
 
   end
