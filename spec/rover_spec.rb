@@ -31,6 +31,10 @@ describe Rover do
       expect(test_rover.move('RR')).to eq('1 2 S')
     end
 
+    it 'can move one space to the East' do
+      expect(test_rover.move('RM')).to eq('2 2 E')
+    end
+
   end
 
 end

@@ -26,7 +26,11 @@ class Rover
         facing = compass[compass_counter]
       end
       if direction == 'M'
-        y += 1
+        if facing == 'N'
+          y += 1
+        elsif facing == 'E'
+          x += 1
+        end
       end
     end
 
