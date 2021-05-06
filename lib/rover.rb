@@ -8,38 +8,63 @@ class Rover
 
   def move(instructions)
 
-    x = @start_position[0]
-    y = @start_position[1]
-    facing = @start_position[2]
-    compass = ['W', 'N', 'E', 'S']
-    compass_counter = compass.index(facing)
-
+    navagation_tools
     directions = instructions.chars
 
     directions.each do |direction|
       if direction == 'R'
-        compass_counter == 3 ? (compass_counter = 0) : (compass_counter += 1)
-        facing = compass[compass_counter]
+        turn_right
       end
       if direction == 'L'
-        compass_counter -= 1
-        facing = compass[compass_counter]
+        turn_left
       end
       if direction == 'M'
-        if facing == 'N'
-          y += 1
-        elsif facing == 'E'
-          x += 1
-        elsif facing == 'W'
-          x -= 1
-        elsif facing == 'S'
-          y -= 1
-        end
+        move_forward
       end
     end
 
-    "#{x} #{y} #{facing}"
+    final_position
 
   end
+
+  private
+
+  def navagation_tools
+    @x = @start_position[0]
+    @y = @start_position[1]
+    @facing = @start_position[2]
+    @compass = ['W', 'N', 'E', 'S']
+    @compass_counter = @compass.index(@facing)
+  end
+
+  def turn_right
+    @compass_counter == 3 ? (@compass_counter = 0) : (@compass_counter += 1)
+    @facing = @compass[@compass_counter]
+  end
+
+  def turn_left
+    @compass_counter -= 1
+    @facing = @compass[@compass_counter]
+  end
+
+  def move_forward
+    if @facing == 'N'
+      @y += 1
+    elsif @facing == 'E'
+      @x += 1
+    elsif @facing == 'W'
+      @x -= 1
+    elsif @facing == 'S'
+      @y -= 1
+    end
+  end
+
+  def final_position
+    "#{@x} #{@y} #{@facing}"
+  end
+
+
+
+
 
 end
