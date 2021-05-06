@@ -7,24 +7,19 @@ class Rover
   end
 
   def move(instructions)
-
     navagation_tools
     directions = instructions.chars
-
     directions.each do |direction|
       if direction == 'R'
         turn_right
-      end
-      if direction == 'L'
+      elsif direction == 'L'
         turn_left
-      end
-      if direction == 'M'
+      elsif direction == 'M'
+        check_in_bounds
         move_forward
       end
     end
-
     final_position
-
   end
 
   private
@@ -63,8 +58,10 @@ class Rover
     "#{@x} #{@y} #{@facing}"
   end
 
-
-
-
+  def check_in_bounds
+    if @x > 5 || @x < 0 || @y > 5 || @y < 0
+      raise "Your rover was destoryed by a Martian lazer"
+    end   
+  end
 
 end

@@ -56,6 +56,13 @@ describe Rover do
       expect(test_rover_b.move('MMLMMLMLLMLL')).to eq('5 5 W')
     end
 
+    it 'can not go further than the edge of the plateau' do
+      expect{test_rover.move("MMMMMMM")}.to raise_error('Your rover was destoryed by a Martian lazer')
+      expect{test_rover.move("LMMMMMMM")}.to raise_error('Your rover was destoryed by a Martian lazer')
+      expect{test_rover.move("RMMMMMM")}.to raise_error('Your rover was destoryed by a Martian lazer')
+      expect{test_rover.move("RRMMMMMM")}.to raise_error('Your rover was destoryed by a Martian lazer')
+    end
+
   end
 
 end
