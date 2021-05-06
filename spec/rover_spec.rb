@@ -48,8 +48,12 @@ describe Rover do
       expect(test_rover.move('LMLMLMLMM')).to eq('1 3 N')
     end
 
-    it 'can run teh second test input example' do
+    it 'can run the second test input example' do
       expect(test_rover_b.move('MMRMMRMRRM')).to eq('5 1 E')
+    end
+
+    it 'can make more than 3 turns left' do 
+      expect(test_rover_b.move('MMLMMLMLLMLL')).to eq('5 5 W')
     end
 
   end
