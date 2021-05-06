@@ -1,6 +1,7 @@
 require 'rover'
 
 test_rover = Rover.new([1, 2, 'N'], [5, 5])
+test_rover_b = Rover.new([3, 3, 'E'], [5, 5])
 
 describe Rover do
 
@@ -39,8 +40,16 @@ describe Rover do
       expect(test_rover.move('LM')).to eq('0 2 W')
     end
 
-    it 'can mover one space to the South' do
+    it 'can move one space to the South' do
       expect(test_rover.move('RRM')).to eq('1 1 S')
+    end
+
+    it 'can run the first test input example' do
+      expect(test_rover.move('LMLMLMLMM')).to eq('1 3 N')
+    end
+
+    it 'can run teh second test input example' do
+      expect(test_rover_b.move('MMRMMRMRRM')).to eq('5 1 E')
     end
 
   end

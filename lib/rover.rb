@@ -10,15 +10,15 @@ class Rover
 
     x = @start_position[0]
     y = @start_position[1]
+    facing = @start_position[2]
     compass = ['W', 'N', 'E', 'S']
-    compass_counter = compass.index(@start_position[2])
-    facing = 'N'
+    compass_counter = compass.index(facing)
 
     directions = instructions.chars
 
     directions.each do |direction|
       if direction == 'R'
-        compass_counter += 1
+        compass_counter == 3 ? (compass_counter = 0) : (compass_counter += 1)
         facing = compass[compass_counter]
       end
       if direction == 'L'
