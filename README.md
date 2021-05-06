@@ -1,6 +1,6 @@
-#MARS ROVER CHALLENGE
+# MARS ROVER CHALLENGE
 
-##Brief
+## Brief
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars.
 
@@ -28,7 +28,7 @@ Output:
 
 The output for each rover should be its final co-ordinates and heading.
 
-###Example
+### Example
 
 Test Input: | Expected Output:
 
@@ -48,7 +48,7 @@ Expected Output:
 
 5 1 E
 
-###If I Had More Time...
+### If I Had More Time...
 
 Given longer to work on this challenge I think I would create a new class "NasaControl" that would hold the information in relation to the plateau.
 
@@ -58,7 +58,7 @@ There are also some edge cases I would like to get round to checking, for exampl
 
 Also how exactly the user of this program would interact with the rovers, I think I would change it around to simplify how the user enters in the plateau_area, starting_point & the instructions!
 
-###How I found this challenge...
+### How I found this challenge...
 
 Overall I had fun with this challenge, It was a bit of a head-scratcher at first. The toughest part was figuring out how to take the string of instructions and turn them into the final coordinates of the rover.
 
