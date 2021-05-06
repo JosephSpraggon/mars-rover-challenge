@@ -6,6 +6,7 @@ class Rover
     @plateau_area = plateau_area
   end
 
+
   def move(instructions)
     navagation_tools
     @directions = instructions.chars
@@ -22,6 +23,19 @@ class Rover
     @facing = @start_position[2]
     @compass = ['W', 'N', 'E', 'S']
     @compass_counter = @compass.index(@facing)
+  end
+
+  def go
+    @directions.each do |direction|
+      if direction == 'R'
+        turn_right
+      elsif direction == 'L'
+        turn_left
+      elsif direction == 'M'
+        check_in_bounds
+        move_forward
+      end
+    end
   end
 
   def turn_right
@@ -46,27 +60,14 @@ class Rover
     end
   end
 
-  def go
-    @directions.each do |direction|
-      if direction == 'R'
-        turn_right
-      elsif direction == 'L'
-        turn_left
-      elsif direction == 'M'
-        check_in_bounds
-        move_forward
-      end
-    end
+  def check_in_bounds
+    if @x > @plateau_area[0] || @x < 0 || @y > plateau_area[1] || @y < 0
+      raise "Your rover was destoryed by a Martian lazer"
+    end   
   end
 
   def final_position
     "#{@x} #{@y} #{@facing}"
-  end
-
-  def check_in_bounds
-    if @x > 5 || @x < 0 || @y > 5 || @y < 0
-      raise "Your rover was destoryed by a Martian lazer"
-    end   
   end
 
 end

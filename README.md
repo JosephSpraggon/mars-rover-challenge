@@ -1,4 +1,6 @@
-MARS ROVER CHALLENGE
+#MARS ROVER CHALLENGE
+
+##Brief
 
 A squad of robotic rovers are to be landed by NASA on a plateau on Mars.
 
@@ -26,6 +28,8 @@ Output:
 
 The output for each rover should be its final co-ordinates and heading.
 
+###Example
+
 Test Input: | Expected Output:
 
 5 5
@@ -43,3 +47,19 @@ Expected Output:
 1 3 N
 
 5 1 E
+
+###If I Had More Time...
+
+Given longer to work on this challenge I think I would create a new class "NasaControl" that would hold the information in relation to the plateau.
+
+From this class I could then initialize two rovers and begin to work on a method to allow them to both travel across the same plateau simultaneously. I would then also code in a check to throw an error if the rovers collide.
+
+There are also some edge cases I would like to get round to checking, for example The exact data types of the inputs and putting in some checks to catch invalid inputs.
+
+Also how exactly the user of this program would interact with the rovers, I think I would change it around to simplify how the user enters in the plateau_area, starting_point & the instructions!
+
+###How I found this challenge...
+
+Overall I had fun with this challenge, It was a bit of a head-scratcher at first. The toughest part was figuring out how to take the string of instructions and turn them into the final coordinates of the rover.
+
+Taking a TTD approach proved to be very helpful in slowly but surely building out the algorithm needed to manoeuvre the rover around the grid! This helped to remind me the beauty of testing. Testing was also very handy in the refactoring and tidying process, as any changes made could be tested to make sure the code still ran properly!
