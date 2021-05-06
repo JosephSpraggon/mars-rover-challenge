@@ -23,6 +23,10 @@ describe Rover do
       expect(test_rover.move('R')).to eq('1 2 E')
     end
 
+    it 'can turn to the left' do
+      expect(test_rover.move('L')).to eq('1 2 W')
+    end
+
   end
 
 end
