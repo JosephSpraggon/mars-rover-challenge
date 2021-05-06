@@ -1,6 +1,6 @@
 require 'rover'
 
-test_rover = Rover.new('1 2 N', '5 5')
+test_rover = Rover.new([1, 2, 'N'], [5, 5])
 
 describe Rover do
 
@@ -9,14 +9,14 @@ describe Rover do
   end
 
   it 'is initializes rover objects with starting position and the plateau area' do
-    expect(test_rover.start_postion).to eq('1 2 N')
-    expect(test_rover.plateau_area).to eq('5 5')
+    expect(test_rover.start_position).to eq([1, 2, 'N'])
+    expect(test_rover.plateau_area).to eq([5, 5])
   end
 
   context '#move' do
 
     it 'can move one space north' do
-      expect(test_rover.move('M')).to eq('1 3 N')
+      expect(test_rover.move('MLR')).to eq('1 3 N')
     end
 
   end
